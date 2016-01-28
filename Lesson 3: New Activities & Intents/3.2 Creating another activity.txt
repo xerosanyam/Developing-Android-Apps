@@ -1,0 +1,7 @@
+1. App->new->activity->empty activity
+2. declare parent name for up button in manifest
+3. when you press up button onCreate()  of parent is called to avoid this: add 
+	android:launchMode="singleTop" to parent activity
+
+<activity android:name=".DetailActivity"
+            android:parentActivityName=".MainActivity"/>

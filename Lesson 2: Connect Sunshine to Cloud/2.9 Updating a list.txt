@@ -1,0 +1,17 @@
+Note:
+once adapter has been set for a list, you just have to change values in adapter & not touch listView
+during creation of arrayAdapter you need to pass arraylist, however while updating you can add values 1 by 1. (adapter.add(string)) or allatOnce (addAll)
+adapter must be made global
+arrayAdapter internally calls adapter.notifyDataSetChanged()
+
+add is less efficient as compared to addAll
+add notifies(updates) list on adding each element
+addAll updates list at once
+
+@Override
+        protected void onPostExecute(String[] strings) {
+            if(strings!=null){
+                arrayAdapter.clear();
+                arrayAdapter.addAll(strings)
+            }
+        }

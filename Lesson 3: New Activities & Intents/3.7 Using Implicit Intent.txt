@@ -1,0 +1,19 @@
+1. Create a new method to keep all code of intent together
+2 create intent
+
+https://developer.android.com/guide/components/intents-common.html
+
+		SharedPreferences preferences= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String location=preferences.getString(getString(R.string.pref_location_label),getString(R.string.pref_location_default));
+        Intent intent=new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("geo:0,0?q="+location));
+        if(intent.resolveActivity(getPackageManager())!=null){
+            startActivity(intent);
+        }
+
+
+NOTE:
+Intent may not start because the setData did not set the data properly
+
+To make your app receive data from any intent
+add Intent-Filter in your manifest

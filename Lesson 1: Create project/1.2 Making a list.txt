@@ -1,0 +1,9 @@
+Changes in res
+1. Make ListView in MainLayout {make its parentlayout a FrameLayout}
+2. Make a layout resource file containing just a textview *{minHeight}*
+
+Changes in java
+1. Add code after setContentView otherwise findViewById won't work.
+2. Initalize *data* in form of string[] or array list.
+3. Initialize *ArrayAdapter* with getApplicationContext, R.layout.newResourceFileThatwasAdded, R.id.ofTextView, data_Initalized_in_Step2.
+4. Initialize ListView by findViewByID, & pass arrayAdapter to *listview.setAdapter*.

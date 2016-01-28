@@ -1,0 +1,6 @@
+Permission System
+Network I/O
+Thread
+
+1. HTTPURLConnection v/s HTTPClient(Apache, old)
+2. Logs, e for error, v for verbose. tag is for classname

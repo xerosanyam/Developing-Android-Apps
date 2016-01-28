@@ -1,0 +1,9 @@
+public static double getMaxTemperatureForDay(String weatherJsonStr, int dayIndex)
+		throws JSONException {
+		JSONObject weather=new JSONObject(weatherJsonStr);
+        JSONArray list=weather.getJSONArray("list");
+        JSONObject day=list.getJSONObject(dayIndex);
+        JSONObject temp=day.getJSONObject("temp");
+        Double max=temp.getDouble("max");
+		return max;
+	}

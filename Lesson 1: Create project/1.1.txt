@@ -1,0 +1,31 @@
+Katherine, fascinated by app that touch people's lives.
+
+Created Sunshine Nanodegree
+Target SDK: App has been tested on.
+Android Support library: UI features
+
+23 M
+15 Jelly Bean
+
+Change icon: right click app->new->image asset
+
+Linux Kernel; C/C++ librarires, runttime(dalvik, or art), sqlite; application framework(application runs here, as own instance); application layer(contains all apps)
+
+
+
+    chmod +x gradlew - This command only needs to be run once and is used to give gradlew the correct execute permissions.
+    ./gradlew assembleDebug - This command will compile the code.
+    adb install -r app/build/outputs/apk/app-debug-unaligned.apk - This command will install the APK. With the -r flag it will overwrite any prior installed versions. Note if you have more than one device, you will need to use the -s flag right after adb to specify the serial number of the intended device.
+    adb shell am start -n com.example.android.sunshine.app/com.example.android.sunshine.app.MainActivity - This command will actually run the app.
+
+Scroll View, ListView
+AdapterView-> GridView & ListView 			//Recycles single view.
+
+ScrollView v/s ListView
+ScrollView: Different or same child view
+ListView:	Same child view
+
+Context: contains global info about app environment, allows us to access system services & resources, as well as application specific resources
+
+App crashing on adapter
+	data empty or not set properly

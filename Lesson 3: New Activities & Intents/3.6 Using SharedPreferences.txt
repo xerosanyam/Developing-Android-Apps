@@ -1,0 +1,4 @@
+Use sharedprefences to store key/value pair.
+	
+	SharedPreferences preferences= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+	String location=preferences.getString(getString(R.string.pref_location_label),getString(R.string.pref_location_default));

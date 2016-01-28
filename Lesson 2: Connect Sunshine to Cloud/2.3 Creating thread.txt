@@ -1,0 +1,20 @@
+1. Fetch data
+2. Update UI
+
+the above process would take 2 threads, which is cumbersome.
+Android has a class called AsyncTask to manage it.
+Generics of AsyncTask<mostly URL; therefore String, what we get while data is being fetched; void, final result; string/bitmap>
+
+Main advantage: focus on app logic: what you want to do in background thread & what you need to do when it comes to main thread.
+only doInBackground method is called on a separate thread, others are called on the UI thread.
+
+steps of creating asynctask
+1. create a inner class which extends Asynctask; make sure you use proper generics as defined above.
+2. implement its onBackground method.
+
+
+Problems with AsyncTask:
+1. It is made in an activity; its lifetime is tied to an activity; it is innerclass, so whenever activity is stopped, its functioning stops too.
+For example: if you change orientation of phone, asynctask will stop.
+
+2. Must be used only when task is deterministically of a second.

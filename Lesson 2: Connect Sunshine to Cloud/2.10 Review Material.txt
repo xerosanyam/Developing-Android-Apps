@@ -1,0 +1,6 @@
+HttpURLConnection
+	used to send & receive data over web
+AsyncTask
+	
+Adding Menu
+JSON Parsing

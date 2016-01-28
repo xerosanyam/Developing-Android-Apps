@@ -1,0 +1,37 @@
+	contract?
+		agreement b/w data model, storage, views describing hw infom is accessed
+		list of constants	db col name
+		
+	while designing table
+		any info that will be redundant?
+		id must be present to uniquely identify each row
+		id should be set to autoincrement
+		separate table must be created in case of redundant data & linked to existing date by foreign key.
+		
+	foreign_key
+		constraint, restricts adding values that are not in primary key
+	
+What exactly is to be done:
+	1.	define class with constants having name you want for column			--THis is called contract
+		
+			implement BaseColumn interface
+			
+	2. create db with help of SQLiteOpenHelper
+		onCreate(): the first time data base is used, this is called
+		
+		JUnti
+		Testing framework, allows to write automated test suites.
+		
+		onUpgrade()
+		version must be changed if change in table is made
+		delete the data if not server generated
+		keep the data if user generated
+
+	3. Reading/writing on db
+		getReference to database from SQLiteOpenHelper->instance of SQLite database object
+			write: 		create ContentValue which represent row; contains set of key value pairs
+						insert in row will return long val; which is row id, -1 if err
+			
+			read:		query data using query() which returns a cursor
+		
+			validate:	contentValues with values from cursor

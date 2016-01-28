@@ -1,0 +1,5 @@
+SecurityException arise whn some permission is missing like
+ <uses-permission android:name="android.permission.INTERNET"/>
+
+To avoid asking for permission for a task, you can offload task to some system app (taking photo, making phonecall, accessing contacts)
+However, to access current location you need to set uses-permission.

@@ -1,0 +1,33 @@
+Constitutes 3 parts:
+1. creating setting activity
+2. creating xml for PreferenceScreen
+3. Updating onOptionsSelected to open settings activity
+
+1. create a new empty activity (SettingsActivity)
+2. add code from github gist(for better understanding)
+3. create a new menu for settings(since you don't want to show all items on every activity)
+4. Update onOptionsitemSelected to start SettingsActivity
+5. in OnCreate of settings add
+	addPreferencesFromResource(R.xml.preferences);
+	
+6. in OnCreate add following to show summary of preferences chose
+	bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_location_label)));
+
+7. create /res/xml/preferences.xml like below 
+	<?xml version="1.0" encoding="utf-8"?>
+	<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+		<EditTextPreference
+			android:title="@string/pref_location_label"
+			android:key="@string/pref_location_label"
+			android:defaultValue="@string/pref_location_default"
+			android:inputType="text"
+			android:singleLine="true"/>
+		<ListPreference
+			android:title="@string/pre_temp_label"
+			android:key="@string/pre_temp_label"
+			android:entries="@array/pref_temp_options"
+			android:entryValues="@array/pref_temp_values"
+			android:dialogTitle="Pick your unit"
+			android:defaultValue="@string/pre_temp_default"
+			/>
+	</PreferenceScreen>

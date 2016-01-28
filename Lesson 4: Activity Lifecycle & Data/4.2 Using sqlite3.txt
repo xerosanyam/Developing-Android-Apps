@@ -1,0 +1,17 @@
+http://sqlite.org/download.html
+
+./sqlite3 sunshine.db
+
+.databases
+	main
+
+CREATE TABLE weather( _id INTEGER PRIMARY KEY, date TEXT NOT NULL, min REAL NOT NULL, max REAL NOT NULL, humidity REAL NOT NULL, pressure REAL NOT NULL);
+.tables
+	weather
+
+INSERT INTO weather VALUES(1,'20140625',16,20,0,1029);
+	select * from weather
+	
+.header on
+
+.quit

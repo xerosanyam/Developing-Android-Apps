@@ -1,0 +1,17 @@
+1. give an id to rootView
+
+	android:id="@+id/container"
+
+2. in main activity
+
+	@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        if(savedInstanceState==null){
+            getSupportFragmentManager().beginTransaction()
+					.add(R.id.container,new MainFragment())						//should contain the id of mainlayout
+                    .commit();
+        }
+    }
+

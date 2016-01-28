@@ -1,0 +1,38 @@
+IMP! Moving is handled. But old fragment is created again. state was not saved.
+
+1. Another fragment is opened using fragmentmanager.
+2. its state is saved by hiding it & saving on stack
+3. data is passed using bundle & setArguments() of fragment
+
+1. Moving from 1 fragment to another while saving state of 1st fragment
+		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String forecast=arrayAdapter.getItem(position);
+                Log.e("Item was pressed",forecast);
+                Bundle bundle=new Bundle();
+                bundle.putString("forecast",forecast);
+                details details=new details();
+                details.setArguments(bundle);
+                getFragmentManager().beginTransaction()
+                        .add(R.id.container,details)
+                        .hide(MainFragment.this)
+                        .addToBackStack(MainFragment.class.getName())
+                        .commit();
+            }
+        });
+        
+        
+        
+2. Receiving Data from another fragment
+
+   View rootView= inflater.inflate(R.layout.fragment_details, container, false);
+        Bundle bundle=getArguments();
+        TextView textView=(TextView)rootView.findViewById(R.id.details_textView);
+        textView.setText(bundle.getString("forecast"));
+        return rootView;
+
+way to traverse from 1 fragment to another: http://stackoverflow.com/a/19022550/29635797
+
+all ways to pass data: http://stackoverflow.com/a/16036693/2963579
+

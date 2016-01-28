@@ -1,0 +1,29 @@
+1. Add item to the menu
+
+		<item
+        android:id="@+id/menu_item_share"
+        android:showAsAction="always"
+        android:title="Share"
+        android:actionProviderClass="android.support.v7.widget.ShareActionProvider"
+        />
+   
+   This will make it appear(with or without an icon)     
+   
+2. in OnCreateOptionsMenu do this(after declaring class member shareActionProvider as ShareActionProvider)
+
+        MenuItem menuItem=menu.findItem(R.id.menu_item_share);
+        shareActionProvider=new ShareActionProvider(this);
+        MenuItemCompat.setActionProvider(menuItem,shareActionProvider);
+
+
+3. call this method when menuitem is selected (in OnOptionsItemSelected)
+
+
+	private void onShareAction() {
+        Intent shareIntent=new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TEXT,forecast);
+        if (shareActionProvider != null) {
+            shareActionProvider.setShareIntent(shareIntent);
+        }
+    }

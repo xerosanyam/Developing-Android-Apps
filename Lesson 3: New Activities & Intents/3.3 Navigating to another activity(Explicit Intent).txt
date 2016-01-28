@@ -1,0 +1,11 @@
+1. CreateExplicit Intent
+2. use startActivity & not startService
+
+Intent openDetailActivity = new Intent(getApplicationContext(), DetailActivity.class);
+startActivity(openDetailActivity);
+
+3. to put data on an intent use putExtra
+
+Intent openDetailActivity = new Intent(getApplicationContext(), DetailActivity.class)
+                        .putExtra(Intent.EXTRA_TEXT,forecast);
+startActivity(openDetailActivity);

@@ -1,0 +1,16 @@
+1. Start activity
+2. share data b/w apps
+3. broadcast message to many apps
+
+Broadcast 
+
+1. sendBroadcast
+2. received by broadcastReceivers(or Receivers) like intent-filter they tell which broadcast they are intersted in
+
+Two Types(Kinds) of Receiver
+1. Manifest(Keep running, to get updates from GCM)			-Works even if application is closed
+2. Activity(Music app to know headphones switched off)		-Works only when application is running
+
+Events:
+ACTION_POWER_CONNECTED						android.intent.action.ACTION_POWER_CONNECTED
+ACTION_BATTERY_LOW							android.intent.action.ACTION_BATTERY_LOW

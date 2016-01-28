@@ -1,0 +1,1 @@
+3.9 BroadcastReceiver Battery Indicator http://programmerguru.com/android-tutorial/android-broadcast-receiver-example/

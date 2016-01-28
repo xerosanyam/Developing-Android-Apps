@@ -1,0 +1,3 @@
+communicating between various fragments is much easier rather than sending data back and forth between activities
+try to create min activity in app as possible
+creating Activities is costly

@@ -1,0 +1,23 @@
+Guaranteed to be called before kill
+before honeycomb: onPause
+after honeycomb: onStop
+
+OnScreen lock: onStop
+
+onRotation: destroy, create again
+
+Things to do in onStop
+	Sensor Listeners
+	Location Updates
+	Dynamic Broadcast Receivers
+	Game physics Engine
+
+Any task that needs to keep happening even when activity is closed shouldn't be happening in activity
+
+When back pressed: finish() : ->onDestroy()
+
+Active Activity
+Visible Activity
+Background Activity
+
+avoid singletons

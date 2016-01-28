@@ -1,0 +1,9 @@
+Learnt about
+1. Adding new activities
+2. navigate b/w them
+3. Intents
+
+Lesson 4:
+activity life cycle
+saving data
+content providers

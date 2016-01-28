@@ -1,0 +1,4 @@
+Android Clean
+find . -type f | wc -l
+
+This will reduce after clean

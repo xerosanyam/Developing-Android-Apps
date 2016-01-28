@@ -1,0 +1,9 @@
+The UI components are organized into Activities, which we learned about in this lesson. The behind-the-scenes work is handled by other Android classes including:
+*Content Providers (Lesson 4) - Manage app data
+*Services (Lesson 6) - Run background tasks with no UI, such as downloading information or playing music.
+*Broadcast Receivers (Lesson 6) - Listen for and respond to system announcements, such as the screen being turned on or losing network connectivity.
+
+To turn XML into java View object, we need to inflate the layout.
+After layout is inflated it needs to be associated with activity.
+To associate with activity, call setContentView in oncreate method
+

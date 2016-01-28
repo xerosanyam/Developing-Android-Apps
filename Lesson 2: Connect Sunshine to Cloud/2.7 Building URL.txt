@@ -1,0 +1,19 @@
+import android.net.Uri;
+
+final String BaseURL="http://api.openweathermap.org/data/2.5/forecast/daily";
+                final String Query_Param="q";
+                final String Format_Param="mode";
+                final String UNITS_Param="units";
+                final String Days_Param="cnt";
+                final String APPID_Param="appid";
+
+                Uri builtUri= Uri.parse(BaseURL).buildUpon()
+                        .appendQueryParameter(Query_Param,params[0])
+                        .appendQueryParameter(Format_Param,format)
+                        .appendQueryParameter(UNITS_Param,units)
+                        .appendQueryParameter(Days_Param,Integer.toString(numDays))
+                        .appendQueryParameter(APPID_Param,appId)
+                        .build();
+
+                URL url=new URL(builtUri.toString());
+                Log.v("Built URL",builtUri.toString());

@@ -1,0 +1,6 @@
+1. 	1. FrameLayout	(with id fragment_container)
+	2. TextView		(with id detailInfo)
+
+2. 	1. MainActivity extends FragmentActivity
+	2. MainFragment extends ListFragment
+		1. create an interface OnDaySelected

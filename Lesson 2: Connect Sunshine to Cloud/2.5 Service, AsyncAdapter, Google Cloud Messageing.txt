@@ -1,0 +1,11 @@
+component w/o UI
+less likely to be interrupted.
+scheduled using inexact repeating alarm
+ 
+Better Solution: AsyncAdapter
+ designed for efficient background data sync
+ 
+Even Better Solution: Google Cloud Messaging
+ Initiated from Server; AsyncAdapter on phone is triggered
+ N/w operation only when something is to be updated to server
+ 

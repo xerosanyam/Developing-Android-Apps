@@ -1,0 +1,10 @@
+1. Use getIntent() to get previous Intent
+2. Use getStringExtra() to get the required value
+3. check whether intent is not null & it has the tag
+
+Intent intent=getIntent();
+        if(intent!=null & intent.hasExtra(Intent.EXTRA_TEXT)) {
+            String forecast = intent.getStringExtra(Intent.EXTRA_TEXT);
+            TextView textView = (TextView) findViewById(R.id.detail_textView);
+            textView.setText(forecast);
+        }

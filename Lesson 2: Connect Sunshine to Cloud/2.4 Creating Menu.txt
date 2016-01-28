@@ -1,0 +1,54 @@
+1. Create a directory named menu in res
+2. Create menu resource file "forecast"
+3. declare an item inside menu; give id=action_refresh
+
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+    android:id="@+id/action_refresh"
+    android:title="@string/action_refresh"
+         />
+</menu>
+
+4. in mainActivity override onCreateOptions & inflate your own menu(imp! you can inflate multiple menus see 6th point)
+
+@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.forecast,menu);
+        return true;
+    }
+
+5. to add behavior to menu define onOptionsItemSelected 
+
+@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id=item.getItemId();
+        if(id==R.id.action_refresh){
+            fetchTask=new fetchWeatherTask();
+            fetchTask.execute();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+Note:
+in Fragment onCreate add
+Fragment.setHasOptionsMenu(true);
+
+6. to add multiple menu
+		MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.forecast, menu);
+        menuInflater.inflate(R.menu.details,menu);
+        
+    & then add action
+    if (id == R.id.action_refresh) {
+            fetchTask = new fetchWeatherTask();
+            fetchTask.execute("560100");
+            return true;
+        }
+        else if(id==R.id.action_settings){
+            Intent intent=new Intent(getApplicationContext(),SettingsActivity.class);
+            startActivity(intent);
+            return true;
+        }
