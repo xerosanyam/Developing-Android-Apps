@@ -1,9 +1,9 @@
-## Shadow on button
-	background @android:drawable/dialog_holo_light_frame
+### Customize button
+1. Shadow: android:background="@android:drawable/dialog_holo_light_frame"
+2. http://angrytools.com/android/button/
 	
-## Change color of button on button press
-	My App Portfolio
-	orderin of item is important
+### Change color of button on button press
+orderin of item is important
 
 	drawable/buttonshape.xml
 	<?xml version="1.0" encoding="utf-8"?>
@@ -23,10 +23,9 @@
 			</shape>
 		</item>
 	</selector>
-	
-	http://angrytools.com/android/button/
-	
-## Vibration on button press
-	uses permission
-	
 
+### Vibration on button press
+1.	<uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+2.	import android.os.Vibrator;
+	Vibrator myvib= (Vibrator)this.getSystemService(VIBRATOR_SERVICE);
+	myvib.vibrate(15);
