@@ -3,7 +3,7 @@
 2. http://angrytools.com/android/button/
 	
 ### Change color of button on button press
-ordering of items is important. `<item android:state_pressed="true">` must come before general item.
+**ordering of items is important**. `<item android:state_pressed="true">` must come before general item.
 
 `drawable/buttonshape.xml`
 ```xml
