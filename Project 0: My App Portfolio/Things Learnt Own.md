@@ -25,7 +25,7 @@ orderin of item is important
 	</selector>
 
 ### Vibration on button press
-1.	<uses-permission android:name="android.permission.VIBRATE"></uses-permission>
-2.	import android.os.Vibrator;
-	Vibrator myvib= (Vibrator)this.getSystemService(VIBRATOR_SERVICE);
-	myvib.vibrate(15);
+1.    <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+2.    import android.os.Vibrator;
+      Vibrator myvib= (Vibrator)this.getSystemService(VIBRATOR_SERVICE);
+      myvib.vibrate(15);
